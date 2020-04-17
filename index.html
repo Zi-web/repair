@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Доходный дом</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/style.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link rel="shortcut icon" href="img/favicon.png" type="image/png">
@@ -29,7 +28,7 @@
           </div>
           <div class="main__phone">
             <a class="main__tel" href="tel:79169811777"><span>+7 (916) 981-17-77</span><img src="img/icon-phone-mob.png"></a>
-            <a href="#callback" id="main__btn" class="btn  btn--call main__btn--header  popup-with-zoom-anim">Заказать звонок</a>
+            <a href="#callback" id="main__btn" class="btn  btn--call main__btn--header  popup-with-zoom-anim">Перезвоните мне</a>
           </div>
         </header>
       <div class="main__wrapper">
@@ -45,9 +44,9 @@
           <img src="img/bg-img1.png" alt="">
         </div>
         <div class="main__btn2"> 
-        <button class="btn  btn--main">
+        <a href ="#calculator" class="btn  btn--main">
           Рассчитать стоимость
-        </button>
+        </a>
         </div>
         <p class="main__descr">Подберем решение под любой бюджет</p>
       </div>
@@ -127,35 +126,37 @@
         <p class="advantage__text1">Наша компания специализиуется по ремонту квартир под сдачу в аренду и<br>
   способна предоставить качественное решение по выгодным ценам.</p>
         <p class="advantage__text2">Мы подоберем именно то, что принесет наибольшую выгоду владельцу квартиры.</p>
-        <button class="btn  btn--main  advantage__btn">Рассчитать стоимость</button>
+        <a href="#calculator" class="btn  btn--main  advantage__btn">Рассчитать стоимость</a>
       </div>
     </section>
 
-    <section class="calculator">
+    <section class="calculator" id="calculator">
       <h2 class="calculator__title">Рассчитайте стоимость ремонта</h2>
       <div class="calculator__wrapper">
         <div class="calculator__left">
           <div class="calculator__form">
             <p class="calculator__text">Площадь квартиры, м<sup>2</sup></p>
-            <form name="nomer_scrollbar" class="form">
-              <input type="range" name="ageInputName" id="ageInputId" min="1" max="200" value="20"/>
+            <form name="nomer_scrollbar" class="form" id="contentForm" autocomplete="off">
+              <input type="range" name="urange" id="ageInputId" min="1" max="200" value="20"/>
               <span class="form__num">
                 <output name="ageOutputName" id="ageOutputId"></output>
               </span>
-            </form>
+            
             <div class="form__row">
                 <div class="form__input-wrap">
                   <label for="name"></label>
-                  <input class="form__input" type="text" name="name" id="name" placeholder="Ваше имя">
+                  <input class="form__input" type="text" name="uname" id="name" placeholder="Ваше имя"  required>
                 </div>
                 <div class="form__input-wrap">
                   <label for="tel"></label>
-                   <input class="form__input" type="tel" id="tel" name="tel" placeholder="+7(___)___-__-__">
+                   <input class="form__input" type="tel" id="tel" name="uphone" placeholder="+7(___)___-__-__"  required>
                 </div>
+                <input name="formInfo" class="formInfo" type="hidden" value="Рассчитать стоимость"/>
                 <div class="form__btn  btn  btn--main">
                  <input type="submit" class="btn  btn--main" value="Рассчитать стоимость">
                 </div>
             </div>
+            </form>
           </div>
         </div>
         <div class="calculator__right">
@@ -188,17 +189,17 @@
             <h3 class="why__title">Фото/видео отчеты</h3>
             <p class="why__descr">Еженедельно мы будем предоставлять фото и видео отчеты продвижения работы</p>
           </div>
-          <div class="why__item">
+          <div class="why__item  why__item--big">
             <p class="why__num">05</p>
             <h3 class="why__title">Выгода на материалах</h3>
             <p class="why__descr">Партнерство с крупнейшими строительными магазинами поможет существенно сэкономить на закупке стройматериалов  </p>
           </div>
-          <div class="why__item">
+          <div class="why__item  why__item--big">
             <p class="why__num">06</p>
             <h3 class="why__title">Интерьер студии</h3>
             <p class="why__descr">Мы предоставляем весь комплекс работ: от идеи до расстановки мебели, бытовой техники и аксессуаров</p>
           </div>
-          <div class="why__item">
+          <div class="why__item  why__item--big">
             <p class="why__num">07</p>
             <h3 class="why__title">Технологии «Умный дом»</h3>
             <p class="why__descr">Мы оснащаем студии современными технологиями: электронные замки, светильники с датчиками движения, интелектуальные камеры и usb розетки</p>
@@ -288,7 +289,7 @@
 
     <section class="sale">
       <div class="sale__wrapper">
-        <a href="">
+        <a href="#sale" class="callback popup-with-zoom-anim">
           <img src="img/sale.png" alt="">
         </a>
         <!---
@@ -306,9 +307,8 @@
       <div class="contacts__wrapper">
         <h2 class="contacts__title">Контакты</h2>
         <div class="contacts__map">
-          <!---
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2252.300787537397!2d37.51441141563792!3d55.63158128052112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54d51019e2c1d%3A0x412bb13cb4b236f8!2z0YPQuy4g0J_RgNC-0YTRgdC-0Y7Qt9C90LDRjywgMTI4LCDQnNC-0YHQutCy0LAsINCg0L7RgdGB0LjRjywgMTE3MzIx!5e0!3m2!1sru!2sby!4v1586975000487!5m2!1sru!2sby" width="1140" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>--->
-          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A65097721ab2d5e82e76e99fa8f4c34b03f62c5868f14fc34d728e4642bf3b7c7&amp;source=constructor" width="100%" height="550" frameborder="0"></iframe>
+          <iframe class="contacts__map-desc" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad8f6e13d610311bb38e8150f350c2cd3604e3fff6c64fd736051ca1e2e3813fe&amp;source=constructor" width="100%" height="550" frameborder="0"></iframe>
+          <iframe class="contacts__map-mob" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad8f6e13d610311bb38e8150f350c2cd3604e3fff6c64fd736051ca1e2e3813fe&amp;source=constructor" width="100%" height="240" frameborder="0"></iframe>
           <div class="contacts__address">
             <div class="contacts__address--wrapper">
               <a href="/" class="main__logo">
@@ -358,32 +358,32 @@
       </div>
     </footer>
 
-<!---
-  <div id="zayavka" class="popup popup--form zoom-anim-dialog mfp-hide">
-    <p class="title">Отправить заявку</p>
+
+  <div id="sale" class="popup popup--form zoom-anim-dialog mfp-hide">
+    <p class="title  popap__title">Получить скидку 50%</p>
+    <p class="title  popap__subtitle">Заполните формы и мы с вами свяжемся</p>
     <form id="zayavkaForm" class="form" autocomplete="off">
-      <input name="uname" type="text" id="username" placeholder="Ваше имя" required>
+      <input name="uname" type="text" id="username1" placeholder="Ваше имя" required>
       <input class="phone" name="uphone" type="tel" id="phone" tabindex="0" placeholder="+7 (___) ___-__-__" required>
-      <input name="formInfo" class="formInfo" type="hidden" value="Заявка"/>
-      <div class="btn_block">
-        <input type="submit" class="btn" value="Отправить" />
+      <input name="formInfo" class="formInfo" type="hidden" value="Получить скидку 50%"/>
+      <div class="btn_block  btn--main">
+        <input type="submit" class="btn  btn--main" value="Отправить" />
       </div>
-      <input class="checkbox" id="checkbox" type="checkbox" checked>
-      <label for="checkbox"><span>Я принимаю условия передачи информации</span></label>
+      <p class="form__text">Нажимая на кнопку, Вы принимаете <a href="#politics" class="popup-with-zoom-anim">Положение и Согласие</a> на обработку персональных данных.</p>
     </form>
   </div>
     
   <div id="callback" class="popup popup--form zoom-anim-dialog mfp-hide">
-    <p class="title">Обратный звонок</p>
+    <p class="title  popap__title">Обратный звонок</p>
+    <p class="title  popap__subtitle">Заполните формы и мы с вами свяжемся</p>
     <form id="callbcackForm" class="form" autocomplete="off">
       <input name="uname" type="text" id="username" placeholder="Ваше имя" required>
       <input class="phone" name="uphone" type="tel" id="phone" tabindex="0" placeholder="+7 (___) ___-__-__" required>
       <input name="formInfo" class="formInfo" type="hidden" value="Обратный звонок"/>
-      <div class="btn_block">
-        <input type="submit" class="btn" value="Отправить" />
+      <div class="btn_block  btn--main">
+        <input type="submit" class="btn  btn--main" value="Отправить" />
       </div>
-      <input class="checkbox" id="checkbox" type="checkbox" checked>
-        <label for="checkbox"><span>Я принимаю условия передачи информации</span></label>
+      <p class="form__text">Нажимая на кнопку, Вы принимаете <a href="#politics" class="popup-with-zoom-anim">Положение и Согласие</a> на обработку персональных данных.</p>
     </form>
   </div>
 
@@ -400,10 +400,12 @@
             Настоящим подтверждаю, что я ознакомлен и согласен с условиями Политики в отношении обработки персональных данных. Настоящим я даю разрешение Сайту в целях информирования о товарах и услугах, заключения и исполнения договора купли-продажи обрабатывать - собирать, записывать, систематизировать, накапливать, хранить, уточнять (обновлять, изменять), извлекать, использовать, передавать (в том числе поручать обработку другим лицам), обезличивать, блокировать, удалять, уничтожать - мои персональные данные: фамилию, имя, пол, дату рождения, номера домашнего и мобильного телефонов, адрес электронной почты, а также данные об интересах на основании анализа моих поисковых запросов и посещений Интернет-сайтов. Также я разрешаю в целях информирования о товарах, работах, услугах направлять на указанный мною адрес электронной почты и/или на номер мобильного телефона рекламу и информацию о товарах, работах, услугах и его партнеров.
         </p>
     </div>
---->
+
+  <script src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/scroll.js"></script>
   <script type="text/javascript" src="js/calc2.js"></script>
-  <script src="js/jquery/jquery.magnific-popup.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/soltend.js"></script>
     <script src="js/send.js"></script>
   </body>
